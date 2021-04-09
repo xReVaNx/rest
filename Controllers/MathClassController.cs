@@ -13,7 +13,7 @@ namespace rest.Controllers
     {
         [HttpPost]
         [Route("/{a}+{b}")]
-        public int Post(int a, int b)
+        public int Post([FromRoute]int a, [FromRoute]int b)
         {
             return MathClass.Add(a, b);
         }
