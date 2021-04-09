@@ -4,15 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace rest.Controllers
 {
     [ApiController]
-    [Route("[controller")]
+    [Route("[controller]")]
     public class MathClassController : ControllerBase
     {
         [HttpPost]
-        [Route("/{a}+{b}")]
+        [Route("/Add/{a}-{b}")]
         public int Post([FromRoute]int a, [FromRoute]int b)
         {
             return MathClass.Add(a, b);
